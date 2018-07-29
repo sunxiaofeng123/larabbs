@@ -24,6 +24,12 @@ class Topic extends Model
         return $this->belongsTo(User::class);
     }
 
+    // 关联回复表一对多关系
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
     /**
      * @param $query
      * @param $order
