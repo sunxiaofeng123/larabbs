@@ -24,6 +24,7 @@ class TopicsController extends Controller
 		return view('topics.index', compact('topics'));
 	}
 
+	//单文章显示
     public function show(Topic $topic)
     {
         return view('topics.show', compact('topic'));
