@@ -20,7 +20,7 @@ class RepliesController extends Controller
 	{
 		$reply->user_id  = Auth::id();
 		$reply->topic_id = $request->topic_id;
-        $reply->content  = $request->content;
+        $reply->content  = $request->input('content');
 
 		$reply->save();
 		return redirect()->to($reply->topic->link())->with('success', '创建成功！');
