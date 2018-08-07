@@ -32,7 +32,7 @@ class SeedRolesAndPermissionsData extends Migration
         $founder->givePermissionTo('edit_settings');
 
         //创建管理员角色，并赋予权限
-        $maintainer = Role::create(['name' => 'Rowan Ankunding']);
+        $maintainer = Role::create(['name' => 'Kristian Schulist']);
         $maintainer->givePermissionTo('manage_contents');
     }
 
@@ -47,7 +47,7 @@ class SeedRolesAndPermissionsData extends Migration
         app()['cache']->forget('spatie.permission.cache');
 
         //清除所有数据表数据
-        $tableNames = config(['permission.table_names']);
+        $tableNames = config('permission.table_names');
 
         Model::unguard();
         DB::table($tableNames['role_has_permissions'])->delete();
